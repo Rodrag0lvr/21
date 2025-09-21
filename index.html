@@ -1,0 +1,173 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Para mi lo quita de Monterrico</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            min-height: 100vh;
+            font-family: 'Arial', sans-serif;
+            background: linear-gradient(135deg, #ffeaa7c7 0%, #fab1a0 50%, #fd79a8 100%);
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            overflow: hidden;
+            position: relative;
+        }
+
+        .container {
+            text-align: center;
+            max-width: 800px;
+            padding: 20px;
+            position: relative;
+            z-index: 1;
+        }
+
+        .title {
+            font-size: 3rem;
+            font-weight: bold;
+            color: white;
+            text-shadow: 2px 2px 8px rgba(255, 255, 255, 0.5);
+            margin-bottom: 40px;
+            opacity: 0;
+            transform: translateY(-50px);
+            animation: slideInFromTop 1.5s ease-out 0.5s forwards;
+        }
+
+        @keyframes slideInFromTop {
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        .image-container {
+            position: relative;
+            display: inline-block;
+            opacity: 0;
+            animation: fadeIn 1.5s ease-out 1s forwards;
+        }
+
+        .tulip-image {
+            max-width: 100%;
+            height: auto;
+            display: block;
+            border-radius: 15px;
+            transition: transform 0.3s ease;
+        }
+
+        .image-container:hover .tulip-image {
+            transform: scale(1.03);
+        }
+
+        .subtitle {
+            font-size: 1.2rem;
+            color: #2d3436;
+            margin-top: 30px;
+            opacity: 0;
+            text-shadow: 1px 1px 4px rgba(255, 255, 255, 0.5);
+            animation: fadeInSubtitle 1s ease-out 2.5s forwards;
+        }
+
+        @keyframes fadeInSubtitle {
+            to { opacity: 0.8; }
+        }
+
+        @keyframes fadeIn {
+            to { 
+                opacity: 1; 
+            }
+        }
+
+        /* Corazones flotantes con colores pasteles */
+        .heart {
+            position: absolute;
+            color: rgba(253, 121, 168, 0.6);
+            font-size: 20px;
+            animation: floatUp 8s ease-in-out infinite;
+        }
+
+        .heart:nth-child(1) { left: 10%; animation-delay: 0s; }
+        .heart:nth-child(2) { left: 20%; animation-delay: 1s; }
+        .heart:nth-child(3) { right: 20%; animation-delay: 2s; }
+        .heart:nth-child(4) { right: 10%; animation-delay: 3s; }
+
+        @keyframes floatUp {
+            0% {
+                transform: translateY(100vh) rotate(0deg);
+                opacity: 0;
+            }
+            10% {
+                opacity: 1;
+            }
+            90% {
+                opacity: 1;
+            }
+            100% {
+                transform: translateY(0vh) rotate(360deg);
+                opacity: 0;
+            }
+        }
+
+        /* Responsive Design Mejorado */
+        @media (max-width: 768px) {
+            .title {
+                font-size: 2.2rem;
+            }
+            
+            .container {
+                padding: 15px;
+            }
+
+            .tulip-image {
+                max-width: 90%;
+            }
+        }
+
+        @media (max-width: 480px) {
+            .title {
+                font-size: 1.8rem;
+                margin-bottom: 30px;
+            }
+
+            .subtitle {
+                font-size: 1rem;
+            }
+
+            .tulip-image {
+                max-width: 95%;
+                border-radius: 10px;
+            }
+
+            .container {
+                padding: 10px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Corazones flotantes -->
+    <div class="heart">💛</div>
+    <div class="heart">🌷</div>
+    <div class="heart">💛</div>
+    <div class="heart">🌷</div>
+
+    <div class="container">
+        <h1 class="title">Para mi loquita de Monterrico</h1>
+        
+        <div class="image-container">
+            <img src="tulipanes.png" alt="Tulipanes amarillos" class="tulip-image">
+        </div>
+        
+        <p class="subtitle">By: Rod <3 </p>
+    </div>
+</body>
+</html>
